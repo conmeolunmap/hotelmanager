@@ -7,9 +7,23 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="ckeditor/ckeditor.js"> </script>
+
+
+  
+
+  <!--for CKeditor-->
+  <script src="ckeditor/ckeditor.js"></script>
+  <script src="ckeditor/samples/js/sample.js"></script>
+  <link rel="stylesheet" href="ckeditor/samples/css/samples.css">
+  <link rel="stylesheet" href="ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+
+
+  <script>
+        $(":file").filestyle();
+  </script>
+
 </head>
-<body>
+<body id="main">
 <div class="container">
 	
 

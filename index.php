@@ -15,7 +15,12 @@
     <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
 
-    
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
+
+
+    <?php include "database.php"; ?>
   
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,6 +29,13 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+    *{
+      font-family: 'Quicksand', sans-serif;
+
+    }
+    </style>
   </head>
   <body>
     
@@ -109,226 +121,42 @@
     </section>
     <!-- END section -->
 
-    <section class="site-section bg-light">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12 heading-wrap text-center">
-            <h4 class="sub-heading">Our Luxury Rooms</h4>
-              <h2 class="heading">Featured Rooms</h2>
-          </div>
-        </div>
-        <div class="row ">
+    
 
 
-          <div class="col-sm-12 col-md-4">
-            <div class="media d-block room mb-0">
-              <figure>
-                <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
-                <div class="overlap-text">
-                  <span>
-                    1 Double Bed Room 
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                  </span>
-                </div>
-              </figure>
-              <div class="media-body">
-                <h3 class="mt-0"><a href="#">1 Double Bed Room</a></h3>
-                <ul class="room-specs">
-                  <span class="ion-ios-people-outline"></span> 2 Guests<br>
-                  <span class="ion-cash"></span> 600.000 vnd/day <br> 
-                  <span class="ion-cash"></span> 11.000.000 vnd/month<br>
-                  <span class="ion-ios-circle-filled"></span> 1 Sofa<br> 
-                  <span class="ion-ios-circle-filled"></span> 1 Shower<br> 
-                  <span class="ion-ios-circle-filled"></span> 1 WC<br> 
-                  <span class="ion-ios-circle-filled"></span> 1 Kitchen
-                </ul>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">Book Now</a></p>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-sm-12 col-md-4">
-            <div class="media d-block room mb-0">
-              <figure>
-                <img src="images/hotel/9.jpg" alt="Generic placeholder image" class="img-fluid">
-                <div class="overlap-text">
-                  <span>
-                    2 Double Bed Room 
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                  </span>
-                </div>
-              </figure>
-              <div class="media-body">
-                <h3 class="mt-0"><a href="#">2 Double Bed Room</a></h3>
-                <ul class="room-specs">
-                  <span class="ion-ios-people-outline"></span> 3 Guests<br>
-                  <span class="ion-cash"></span> 650.000 vnd/day <br> 
-                  <span class="ion-cash"></span> 15.000.000 vnd/month<br>
-                  <span class="ion-ios-circle-filled"></span> 1 Sofa<br> 
-                  <span class="ion-ios-circle-filled"></span> 1 Shower<br> 
-                  <span class="ion-ios-circle-filled"></span> 1 WC<br> 
-                  <span class="ion-ios-circle-filled"></span> 1 Kitchen
-                </ul>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">Book Now</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-md-4">
-            <div class="media d-block room mb-0">
-              <figure>
-                <img src="images/img_1.jpg" alt="Generic placeholder image" class="img-fluid">
-                <div class="overlap-text">
-                  <span>
-                    Twin Bed Room 
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                  </span>
-                </div>
-              </figure>
-              <div class="media-body">
-                <h3 class="mt-0"><a href="#">Twin Bed Room</a></h3>
-                <ul class="room-specs">
-                  <span class="ion-ios-people-outline"></span> 4 Guests<br>
-                  <span class="ion-cash"></span> 1.200.000 vnd/day <br> 
-                  <span class="ion-cash"></span> 22.000.000 vnd/month<br>
-                  <span class="ion-ios-circle-filled"></span> 2 Sofa<br> 
-                  <span class="ion-ios-circle-filled"></span> 2 Shower<br> 
-                  <span class="ion-ios-circle-filled"></span> 2 WC<br> 
-                  <span class="ion-ios-circle-filled"></span> 1 Kitchen
-                </ul>
-                
-                <p><a href="#" class="btn btn-primary btn-sm">Book Now</a></p>
-              </div>
-            </div>
-          </div>
-
-            
-            
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <?php include "room.php"; ?>
    
+
+
+
+
+
     
     <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
       <div class="container">
         <div class="row justify-content-center align-items-center intro">
           <div class="col-md-9 text-center element-animate">
             <h2>Relax and Enjoy your Holiday</h2>
-            <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
-            <div class="btn-play-wrap"><a href="https://vimeo.com/channels/staffpicks/93951774" class="btn-play popup-vimeo "><span class="ion-ios-play"></span></a></div>
+            <p class="lead mb-5"></p>
+            
           </div>
         </div>
       </div>
     </section>
     <!-- END section -->
     
-    <section class="site-section bg-light">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-12 heading-wrap text-center">
-            <h4 class="sub-heading">Our Blog</h4>
-              <h2 class="heading">Our Recent Blog</h2>
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col-md-4">
-            <div class="post-entry">
-              <img src="images/img_3.jpg" alt="Image placeholder" class="img-fluid">
-              <div class="body-text">
-                <div class="category">Rooms</div>
-                <h3 class="mb-3"><a href="#">New Rooms</a></h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deserunt illo quis similique dolore voluptatem culpa voluptas rerum, dolor totam.</p>
-                <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="post-entry">
-              <img src="images/img_6.jpg" alt="Image placeholder" class="img-fluid">
-              <div class="body-text">
-                <div class="category">News</div>
-                <h3 class="mb-3"><a href="#">New Staff Added</a></h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deserunt illo quis similique dolore voluptatem culpa voluptas rerum, dolor totam.</p>
-                <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-4">
-            <div class="post-entry">
-              <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid">
-              <div class="body-text">
-                <div class="category">New Rooms</div>
-                <h3 class="mb-3"><a href="#">Big Rooms for All</a></h3>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deserunt illo quis similique dolore voluptatem culpa voluptas rerum, dolor totam.</p>
-                <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-4">
-              <div class="post-entry">
-                <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid">
-                <div class="body-text">
-                  <div class="category">New Rooms</div>
-                  <h3 class="mb-3"><a href="#">Big Rooms for All</a></h3>
-                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deserunt illo quis similique dolore voluptatem culpa voluptas rerum, dolor totam.</p>
-                  <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>
-                </div>
-              </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="post-entry">
-                  <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid">
-                  <div class="body-text">
-                    <div class="category">New Rooms</div>
-                    <h3 class="mb-3"><a href="#">Big Rooms for All</a></h3>
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deserunt illo quis similique dolore voluptatem culpa voluptas rerum, dolor totam.</p>
-                    <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                  <div class="post-entry">
-                    <img src="images/img_5.jpg" alt="Image placeholder" class="img-fluid">
-                    <div class="body-text">
-                      <div class="category">New Rooms</div>
-                      <h3 class="mb-3"><a href="#">Big Rooms for All</a></h3>
-                      <p class="mb-4">truncate('<p><div>hello world</div></p>', 4)</p>
-                      <p><a href="#" class="btn btn-primary btn-outline-primary btn-sm">Read More</a></p>
-                    </div>
-                  </div>
-                </div>
-
-        </div>
-
-        <div style="margin:auto; text-align: center;">
-        <ul class="pagination" >
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-        </ul>
-        </div>
-
-      </div>
-    </section>
-    <!-- END section -->
+    <?php include "news.php"; ?>
    
+
+
+
+
+
+
+
     <footer class="site-footer">
       <div class="container">
         <div class="row mb-5">
