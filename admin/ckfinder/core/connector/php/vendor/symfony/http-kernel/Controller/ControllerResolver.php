@@ -15,6 +15,8 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
+ * ControllerResolver.
+ *
  * This implementation uses the '_controller' request attribute to determine
  * the controller to execute and uses the request attributes to determine
  * the controller method arguments.
@@ -35,18 +37,15 @@ class ControllerResolver implements ControllerResolverInterface
     private $supportsVariadic;
 
     /**
-     * If scalar types exists.
+     * Constructor.
      *
-     * @var bool
+     * @param LoggerInterface $logger A LoggerInterface instance
      */
-    private $supportsScalarTypes;
-
     public function __construct(LoggerInterface $logger = null)
     {
         $this->logger = $logger;
 
         $this->supportsVariadic = method_exists('ReflectionParameter', 'isVariadic');
-        $this->supportsScalarTypes = method_exists('ReflectionParameter', 'getType');
     }
 
     /**
@@ -133,7 +132,7 @@ class ControllerResolver implements ControllerResolverInterface
                 $arguments[] = $request;
             } elseif ($param->isDefaultValueAvailable()) {
                 $arguments[] = $param->getDefaultValue();
-            } elseif ($this->supportsScalarTypes && $param->hasType() && $param->allowsNull()) {
+            } elseif ($param->allowsNull()) {
                 $arguments[] = null;
             } else {
                 if (is_array($controller)) {

@@ -13,7 +13,6 @@ namespace Monolog\Handler;
 
 use Monolog\Logger;
 use Monolog\Formatter\LineFormatter;
-use Swift;
 
 /**
  * SwiftMailerHandler uses Swift_Mailer to send the emails
@@ -29,7 +28,7 @@ class SwiftMailerHandler extends MailHandler
      * @param \Swift_Mailer           $mailer  The mailer to use
      * @param callable|\Swift_Message $message An example message for real messages, only the body will be replaced
      * @param int                     $level   The minimum logging level at which this handler will be triggered
-     * @param bool                    $bubble  Whether the messages that are handled can bubble up the stack or not
+     * @param Boolean                 $bubble  Whether the messages that are handled can bubble up the stack or not
      */
     public function __construct(\Swift_Mailer $mailer, $message, $level = Logger::ERROR, $bubble = true)
     {
@@ -74,11 +73,7 @@ class SwiftMailerHandler extends MailHandler
         }
 
         $message->setBody($content);
-        if (version_compare(Swift::VERSION, '6.0.0', '>=')) {
-            $message->setDate(new \DateTimeImmutable());
-        } else {
-            $message->setDate(time());
-        }
+        $message->setDate(time());
 
         return $message;
     }

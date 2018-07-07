@@ -3,8 +3,8 @@
 /*
  * CKFinder
  * ========
- * https://ckeditor.com/ckeditor-4/ckfinder/
- * Copyright (c) 2007-2018, CKSource - Frederico Knabben. All rights reserved.
+ * http://cksource.com/ckfinder
+ * Copyright (C) 2007-2016, CKSource - Frederico Knabben. All rights reserved.
  *
  * The software, this file and its contents are subject to the CKFinder
  * License. Please read the license.txt file before using, installing, copying,
@@ -75,13 +75,6 @@ class Image
      * @var int $dataSize
      */
     protected $dataSize;
-
-    /**
-     * The quality of the rescaled image.
-     *
-     * @var int
-     */
-    protected $resizeQuality;
 
     /**
      * The factory method.
@@ -217,7 +210,7 @@ class Image
     }
 
     /**
-     * Returns the aspect ratio size as an associative array:
+     * Returns the aspect ratio size as associative array:
      * @code
      * array
      * (
@@ -537,8 +530,6 @@ class Image
      */
     public function resize($maxWidth, $maxHeight, $quality = 80, $useHigherFactor = false)
     {
-        $this->resizeQuality = $quality;
-
         $maxWidth = (int) $maxWidth ?: $this->width;
         $maxHeight = (int) $maxHeight ?: $this->height;
 
@@ -574,12 +565,11 @@ class Image
     /**
      * Returns image data.
      *
-     * @param string $format Returned image format MIME type (current image MIME type is used if not set).
-     * @param int $quality   Image quality (used for JPG images only)
+     * @param string $format returned image format mimetype (current image mimetype is used if not set).
      *
      * @return string image data
      */
-    public function getData($format = null, $quality = 80)
+    public function getData($format = null)
     {
         $mime = $format ?: $this->mime;
 
@@ -592,8 +582,7 @@ class Image
             case 'image/jpeg':
             case 'image/bmp':
             case 'image/x-ms-bmp':
-                $quality = $this->resizeQuality ?: $quality;
-                imagejpeg($this->gdImage, null, $quality);
+                imagejpeg($this->gdImage);
                 break;
             case 'image/png':
                 imagealphablending($this->gdImage, false);
@@ -621,7 +610,7 @@ class Image
     }
 
     /**
-     * Returns the size of the image data produced by the `getData()` method.
+     * Returns the size of image data produced by the `getData()` method.
      *
      * @return int image data size in bytes
      */

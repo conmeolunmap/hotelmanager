@@ -28,7 +28,6 @@ class JsonFormatter extends NormalizerFormatter
 
     protected $batchMode;
     protected $appendNewline;
-
     /**
      * @var bool
      */
@@ -36,7 +35,6 @@ class JsonFormatter extends NormalizerFormatter
 
     /**
      * @param int $batchMode
-     * @param bool $appendNewline
      */
     public function __construct($batchMode = self::BATCH_MODE_JSON, $appendNewline = true)
     {
@@ -145,11 +143,10 @@ class JsonFormatter extends NormalizerFormatter
 
             $count = 1;
             foreach ($data as $key => $value) {
-                if ($count++ > 1000) {
-                    $normalized['...'] = 'Over 1000 items ('.count($data).' total), aborting normalization';
+                if ($count++ >= 1000) {
+                    $normalized['...'] = 'Over 1000 items, aborting normalization';
                     break;
                 }
-
                 $normalized[$key] = $this->normalize($value);
             }
 

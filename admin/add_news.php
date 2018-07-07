@@ -33,15 +33,16 @@
             <label>Noi dung tin tuc</label>
             <textarea class="ckeditor form-control" name="fm_content" id='fm_content' ></textarea></br>
             <script>
-             CKEDITOR.replace( 'fm_content',
-                {
-                    filebrowserBrowseUrl : 'ckfinder/ckfinder.html',
-                    filebrowserImageBrowseUrl : 'ckfinder/ckfinder.html?type=Images',
-                    filebrowserFlashBrowseUrl : 'ckfinder/ckfinder.html?type=Flash',
-                    filebrowserUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                    filebrowserImageUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                    filebrowserFlashUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
-                });
+              CKEDITOR.replace( 'fm_content',
+                    {
+                        filebrowserBrowseUrl : 'ckfinder/ckfinder.html',
+                        filebrowserImageBrowseUrl : 'ckfinder/ckfinder.html?type=Images',
+                        filebrowserFlashBrowseUrl : 'ckfinder/ckfinder.html?type=Flash',
+                        filebrowserUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+                        filebrowserImageUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+                        filebrowserFlashUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+                    });
+
             </script>
             
         </div>

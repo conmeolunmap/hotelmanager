@@ -20,10 +20,14 @@ class ParameterBag implements \IteratorAggregate, \Countable
 {
     /**
      * Parameter storage.
+     *
+     * @var array
      */
     protected $parameters;
 
     /**
+     * Constructor.
+     *
      * @param array $parameters An array of parameters
      */
     public function __construct(array $parameters = array())
@@ -125,7 +129,7 @@ class ParameterBag implements \IteratorAggregate, \Countable
         }
 
         if (null !== $currentKey) {
-            throw new \InvalidArgumentException('Malformed path. Path must end with "]".');
+            throw new \InvalidArgumentException(sprintf('Malformed path. Path must end with "]".'));
         }
 
         return $value;

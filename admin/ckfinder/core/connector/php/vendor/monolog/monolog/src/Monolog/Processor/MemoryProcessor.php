@@ -34,8 +34,8 @@ abstract class MemoryProcessor
      */
     public function __construct($realUsage = true, $useFormatting = true)
     {
-        $this->realUsage = (bool) $realUsage;
-        $this->useFormatting = (bool) $useFormatting;
+        $this->realUsage = (boolean) $realUsage;
+        $this->useFormatting = (boolean) $useFormatting;
     }
 
     /**

@@ -40,6 +40,8 @@ class FragmentHandler
     private $requestStack;
 
     /**
+     * Constructor.
+     *
      * RequestStack will become required in 3.0.
      *
      * @param FragmentRendererInterface[] $renderers    An array of FragmentRendererInterface instances
@@ -57,6 +59,8 @@ class FragmentHandler
 
     /**
      * Adds a renderer.
+     *
+     * @param FragmentRendererInterface $renderer A FragmentRendererInterface instance
      */
     public function addRenderer(FragmentRendererInterface $renderer)
     {
@@ -76,7 +80,7 @@ class FragmentHandler
      */
     public function setRequest(Request $request = null)
     {
-        @trigger_error('The '.__METHOD__.' method is deprecated since Symfony 2.4 and will be removed in 3.0.', E_USER_DEPRECATED);
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 2.4 and will be removed in 3.0.', E_USER_DEPRECATED);
 
         $this->request = $request;
     }
@@ -119,6 +123,8 @@ class FragmentHandler
      *
      * When the Response is a StreamedResponse, the content is streamed immediately
      * instead of being returned.
+     *
+     * @param Response $response A Response instance
      *
      * @return string|null The Response content or null when the Response is streamed
      *

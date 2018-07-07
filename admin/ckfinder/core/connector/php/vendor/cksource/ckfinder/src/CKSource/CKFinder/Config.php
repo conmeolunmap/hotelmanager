@@ -3,8 +3,8 @@
 /*
  * CKFinder
  * ========
- * https://ckeditor.com/ckeditor-4/ckfinder/
- * Copyright (c) 2007-2018, CKSource - Frederico Knabben. All rights reserved.
+ * http://cksource.com/ckfinder
+ * Copyright (C) 2007-2016, CKSource - Frederico Knabben. All rights reserved.
  *
  * The software, this file and its contents are subject to the CKFinder
  * License. Please read the license.txt file before using, installing, copying,
@@ -182,8 +182,7 @@ class Config
             'debugLoggers'            => array('ckfinder_log', 'error_log', 'firephp'),
             'tempDirectory' => sys_get_temp_dir(),
             'sessionWriteClose' => true,
-            'csrfProtection' => true,
-            'headers' => array()
+            'csrfProtection' => true
         );
 
         $options = array_merge($defaults, $options);
@@ -208,8 +207,7 @@ class Config
         $localBackendDefaults = array(
             'chmodFiles'   => 0755,
             'chmodFolders' => 0755,
-            'filesystemEncoding' => 'UTF-8',
-            'followSymlinks' => false
+            'filesystemEncoding' => 'UTF-8'
         );
 
         foreach ($options['backends'] as &$backend) {

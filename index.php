@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>LTVAN condotel</title>
+    <title>T-VAN</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,13 +15,31 @@
     <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
 
-
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
+    <!--favicon-->
+    <link rel="shortcut icon" type="image/png" href="images/logo.jpg"/>
 
 
-    <?php include "database.php"; ?>
+
+
+
+
+
+    <?php 
+    include "database.php"; 
+    if(isset($_GET['lang']) && $_GET['lang']=='vie'){
+      include "language/vi.php";
+    }else{
+      include "language/eng.php";
+    }
+    ?>
+
+
+
   
+
+
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
@@ -39,60 +57,18 @@
   </head>
   <body>
     
-    <header role="banner">
-     
-      <nav class="navbar navbar-expand-md navbar-dark bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Tvan Condotel</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="rooms.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rooms</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="rooms.html">Room Videos</a>
-                  <a class="dropdown-item" href="rooms.html">Presidential Room</a>
-                  <a class="dropdown-item" href="rooms.html">Luxury Room</a>
-                  <a class="dropdown-item" href="rooms.html">Deluxe Room</a>
-                </div>
-
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-
-               <li class="nav-item cta">
-                <a class="nav-link" href="booknow.html"><span>Book Now</span></a>
-              </li>
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
-    </header>
+    <?php include "header.php"; ?>
     <!-- END header -->
 
-    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/hotel/9.jpg);">
+    <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/hotel/2.jpg);">
       <div class="container">
         <div class="row align-items-center site-hero-inner justify-content-center">
           <div class="col-md-12 text-center">
 
             <div class="mb-5 element-animate">
-              <h1>Welcome to T-VAN Condotel Can Tho</h1>
-              <p>Address: 72 Luong Dinh Cua, Cai Khe, Ninh Kieu</p>
-              <p><a href="booknow.html" class="btn btn-primary">Book Now</a></p>
+              <h1><?=$tvan['welcome']?></h1>
+              <p><?=$tvan['address']?></p>
+              <p><a href="booknow.php" class="btn btn-primary"><?=$tvan['booknow']?></a></p>
             </div>
 
           </div>
@@ -107,14 +83,14 @@
           <div class="col-md-4">
             <div class="heading-wrap text-center element-animate">
               <h4 class="sub-heading">Stay with our luxury rooms</h4>
-              <h2 class="heading">Stay and Enjoy</h2>
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus illo similique natus, a recusandae? Dolorum, unde a quibusdam est? Corporis deleniti obcaecati quibusdam inventore fuga eveniet! Qui delectus tempore amet!</p>
+              <h2 class="heading"><?=$tvan['introduce_header']?></h2>
+              <p class="mb-5"><?=$tvan['introduce_content']?></p>
               <p><a href="#" class="btn btn-primary btn-sm">More About Us</a></p>
             </div>
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-7">
-            <img src="images/f_img_1.png" alt="Image placeholder" class="img-md-fluid">
+            <img src="images/logo.jpg" style="width:90%; border-radius: 20px;" alt="Image placeholder" class="img-md-fluid img-responsive img-rounded">
           </div>
         </div>
       </div>
@@ -148,56 +124,40 @@
 
 
 
-    <?php include "news.php"; ?>
+    <?php include "news_on_index.php"; ?>
    
 
 
+  <!--   
+    <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+
+    <div id="map"></div>
+
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        var uluru = {lat: 10.376029, lng: 104.961083};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+        map.setZoom(15);
+      }
+    </script> -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.6698679998885!2d105.78482761417764!3d10.044077175031141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a062a8c0535a6d%3A0x7f584356d9c81a1c!2zNzIgTMawxqFuZyDEkOG7i25oIEPhu6dhLCBDw6FpIEto4bq_LCBOaW5oIEtp4buBdSwgQ-G6p24gVGjGoSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1530776793539" width="600" height="450" frameborder="0" style="border:0;width:100%;" allowfullscreen></iframe>
+      
 
 
 
-
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4">
-            <h3>Phone Support</h3>
-            <p>24/7 Call us now.</p>
-            <p class="lead"><a href="tel://">+ 1 332 3093 323</a></p>
-          </div>
-          <div class="col-md-4">
-            <h3>Connect With Us</h3>
-            <p>We are socialized. Follow us</p>
-            <p>
-              <a href="#" class="pl-0 p-3"><span class="fa fa-facebook"></span></a>
-              <a href="#" class="p-3"><span class="fa fa-twitter"></span></a>
-              <a href="#" class="p-3"><span class="fa fa-instagram"></span></a>
-              <a href="#" class="p-3"><span class="fa fa-vimeo"></span></a>
-              <a href="#" class="p-3"><span class="fa fa-youtube-play"></span></a>
-            </p>
-          </div>
-          <div class="col-md-4">
-            <h3>Connect With Us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, odio.</p>
-            <form action="#" class="subscribe">
-              <div class="form-group">
-                <button type="submit"><span class="ion-ios-arrow-thin-right"></span></button>
-                <input type="email" class="form-control" placeholder="Enter email">
-              </div>
-              
-            </form>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-7 text-center">
-            &copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by khoa
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- END footer -->
+    <?php include "footer.php"; ?>
     
     <!-- loader -->
     <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
@@ -214,5 +174,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/magnific-popup-options.js"></script>
 
     <script src="js/main.js"></script>
+
+    
+
+
+         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWutcRCQ9IdSTeVRA0pyRY9VwvmiOf_O0&callback=initMap"
+  type="text/javascript"></script>
+
+
   </body>
 </html>

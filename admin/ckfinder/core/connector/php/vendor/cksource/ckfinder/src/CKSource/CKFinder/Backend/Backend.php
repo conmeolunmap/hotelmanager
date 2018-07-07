@@ -3,8 +3,8 @@
 /*
  * CKFinder
  * ========
- * https://ckeditor.com/ckeditor-4/ckfinder/
- * Copyright (c) 2007-2018, CKSource - Frederico Knabben. All rights reserved.
+ * http://cksource.com/ckfinder
+ * Copyright (C) 2007-2016, CKSource - Frederico Knabben. All rights reserved.
  *
  * The software, this file and its contents are subject to the CKFinder
  * License. Please read the license.txt file before using, installing, copying,
@@ -181,15 +181,7 @@ class Backend extends Filesystem
         }
 
         $directoryPath = $this->buildPath($resourceType, $path);
-
-        // It's possible that directory may not exist yet. This is the case when very first Init command
-        // is received, and resource type directories were not created yet. Some adapters will throw in
-        // this case, so handle this gracefully.
-        try {
-            $contents = $this->listContents($directoryPath);
-        } catch (\Exception $e) {
-            return false;
-        }
+        $contents = $this->listContents($directoryPath);
 
         foreach ($contents as $entry) {
             if ($entry['type'] === 'dir' &&
@@ -313,12 +305,7 @@ class Backend extends Filesystem
     {
         $pathParts = array_filter(explode('/', $directoryPath), 'strlen');
         $dirName = array_pop($pathParts);
-
-        try {
-            $contents = $this->listContents(implode('/', $pathParts));
-        } catch (\Exception $e) {
-            return false;
-        }
+        $contents = $this->listContents(implode('/', $pathParts));
 
         foreach ($contents as $c) {
             if (isset($c['type']) && isset($c['basename']) && $c['type'] === 'dir' && $c['basename'] === $dirName) {
@@ -342,7 +329,7 @@ class Backend extends Filesystem
      */
     public function getFileUrl(ResourceType $resourceType, $folderPath, $fileName, $thumbnailFileName = null)
     {
-        if ($this->usesProxyCommand()) {
+        if (isset($this->backendConfig['useProxyCommand'])) {
             $connectorUrl = $this->app->getConnectorUrl();
 
             $queryParameters = array(

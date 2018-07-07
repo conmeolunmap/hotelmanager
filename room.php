@@ -2,11 +2,20 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 heading-wrap text-center">
-            <h4 class="sub-heading">Our Luxury Rooms</h4>
-              <h2 class="heading">Featured Rooms</h2>
+            <h4 class="sub-heading"><?=$tvan['ourluxuryrooms']?></h4>
+              <h2 class="heading"><?=$tvan['featuredrooms']?></h2>
           </div>
         </div>
         <div class="row ">
+
+
+        <?php
+        $sql="select * from type_of_room where type_id='R1'";
+        $do=mysqli_query($db,$sql);
+        $room1=mysqli_fetch_array($do);
+
+        ?>
+
 
 
           <div class="col-sm-12 col-md-4">
@@ -15,29 +24,41 @@
                 <img src="images/hotel/6.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    1 Double Bed Room 
+                    <?=$room1['type_name']?>
                     <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
+                    
+                    
                   </span>
                 </div>
               </figure>
               <div class="media-body">
-                <h3 class="mt-0"><a href="#">1 Double Bed Room</a></h3>
+                <h3 class="mt-0"><a href="#"><?=$tvan['room1']?></a></h3>
                 <ul class="room-specs">
-                  <span class="ion-ios-people-outline"></span> 2 Guests<br>
-                  <span class="ion-cash"></span> 600.000 vnd/day <br> 
-                  <span class="ion-cash"></span> 11.000.000 vnd/month<br>
+                  <span class="ion-ios-people-outline"></span> <?=$room1['type_people']?> <?=$tvan['guests']?><br>
+                  <span class="ion-cash"></span> <?=number_format($room1['type_priceonday'])?> vnd/<?=$tvan['day']?> <br> 
+                  <span class="ion-cash"></span> <?=number_format($room1['type_priceonmonth'])?> vnd/<?=$tvan['month']?><br>
                   <span class="ion-ios-circle-filled"></span> 1 Sofa<br> 
                   <span class="ion-ios-circle-filled"></span> 1 Shower<br> 
                   <span class="ion-ios-circle-filled"></span> 1 WC<br> 
                   <span class="ion-ios-circle-filled"></span> 1 Kitchen
                 </ul>
                 
-                <p><a href="#" class="btn btn-primary btn-sm">Book Now</a></p>
+                <p><a href="booknow.php?roomtype=1" class="btn btn-primary btn-sm"><?=$tvan['booknow']?></a></p>
               </div>
             </div>
           </div>
+
+
+
+
+
+          <?php
+        $sql="select * from type_of_room where type_id='R2'";
+        $do=mysqli_query($db,$sql);
+        $room2=mysqli_fetch_array($do);
+
+        ?>
+
 
 
           <div class="col-sm-12 col-md-4">
@@ -46,29 +67,44 @@
                 <img src="images/hotel/9.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    2 Double Bed Room 
+                    <?=$room2['type_name']?>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
+                    
                   </span>
                 </div>
               </figure>
               <div class="media-body">
-                <h3 class="mt-0"><a href="#">2 Double Bed Room</a></h3>
+                <h3 class="mt-0"><a href="#"><?=$tvan['room2']?></a></h3>
                 <ul class="room-specs">
-                  <span class="ion-ios-people-outline"></span> 3 Guests<br>
-                  <span class="ion-cash"></span> 650.000 vnd/day <br> 
-                  <span class="ion-cash"></span> 15.000.000 vnd/month<br>
+                  <span class="ion-ios-people-outline"></span> <?=$room2['type_people']?> <?=$tvan['guests']?><br>
+                  <span class="ion-cash"></span> <?=number_format($room2['type_priceonday'])?> vnd/<?=$tvan['day']?> <br> 
+                  <span class="ion-cash"></span> <?=number_format($room2['type_priceonmonth'])?> vnd/<?=$tvan['month']?><br>
                   <span class="ion-ios-circle-filled"></span> 1 Sofa<br> 
                   <span class="ion-ios-circle-filled"></span> 1 Shower<br> 
                   <span class="ion-ios-circle-filled"></span> 1 WC<br> 
                   <span class="ion-ios-circle-filled"></span> 1 Kitchen
                 </ul>
                 
-                <p><a href="#" class="btn btn-primary btn-sm">Book Now</a></p>
+                <p><a href="booknow.php?roomtype=2" class="btn btn-primary btn-sm"><?=$tvan['booknow']?></a></p>
               </div>
             </div>
           </div>
+
+
+
+
+
+
+
+          <?php
+        $sql="select * from type_of_room where type_id='R3'";
+        $do=mysqli_query($db,$sql);
+        $twin=mysqli_fetch_array($do);
+
+        ?>
+
+
 
           <div class="col-sm-12 col-md-4">
             <div class="media d-block room mb-0">
@@ -76,7 +112,7 @@
                 <img src="images/hotel/7.jpg" alt="Generic placeholder image" class="img-fluid">
                 <div class="overlap-text">
                   <span>
-                    Twin Bed Room 
+                    <?=$twin['type_name']?>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
                     <span class="ion-ios-star"></span>
@@ -84,18 +120,18 @@
                 </div>
               </figure>
               <div class="media-body">
-                <h3 class="mt-0"><a href="#">Twin Bed Room</a></h3>
+                <h3 class="mt-0"><a href="#"><?=$tvan['room3']?></a></h3>
                 <ul class="room-specs">
-                  <span class="ion-ios-people-outline"></span> 4 Guests<br>
-                  <span class="ion-cash"></span> 1.200.000 vnd/day <br> 
-                  <span class="ion-cash"></span> 22.000.000 vnd/month<br>
+                  <span class="ion-ios-people-outline"></span> <?=$twin['type_people']?> <?=$tvan['guests']?> <br>
+                  <span class="ion-cash"></span> <?=number_format($twin['type_priceonday'])?> vnd/<?=$tvan['day']?> <br> 
+                  <span class="ion-cash"></span> <?=number_format($twin['type_priceonmonth'])?> vnd/<?=$tvan['month']?><br>
                   <span class="ion-ios-circle-filled"></span> 2 Sofa<br> 
                   <span class="ion-ios-circle-filled"></span> 2 Shower<br> 
                   <span class="ion-ios-circle-filled"></span> 2 WC<br> 
                   <span class="ion-ios-circle-filled"></span> 1 Kitchen
                 </ul>
                 
-                <p><a href="#" class="btn btn-primary btn-sm">Book Now</a></p>
+                <p><a href="booknow.php?roomtype=3" class="btn btn-primary btn-sm"><?=$tvan['booknow']?></a></p>
               </div>
             </div>
           </div>

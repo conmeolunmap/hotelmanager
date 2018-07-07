@@ -6,14 +6,13 @@ use League\Flysystem\Adapter\AbstractAdapter;
 use League\Flysystem\Adapter\Polyfill\NotSupportingVisibilityTrait;
 use League\Flysystem\Config;
 use League\Flysystem\Util;
-use MicrosoftAzure\Storage\Blob\Internal\IBlob;
-use MicrosoftAzure\Storage\Blob\Models\BlobPrefix;
-use MicrosoftAzure\Storage\Blob\Models\BlobProperties;
-use MicrosoftAzure\Storage\Blob\Models\CopyBlobResult;
-use MicrosoftAzure\Storage\Blob\Models\CreateBlobOptions;
-use MicrosoftAzure\Storage\Blob\Models\ListBlobsOptions;
-use MicrosoftAzure\Storage\Blob\Models\ListBlobsResult;
-use MicrosoftAzure\Storage\Common\ServiceException;
+use WindowsAzure\Blob\Internal\IBlob;
+use WindowsAzure\Blob\Models\BlobPrefix;
+use WindowsAzure\Blob\Models\BlobProperties;
+use WindowsAzure\Blob\Models\CreateBlobOptions;
+use WindowsAzure\Blob\Models\ListBlobsOptions;
+use WindowsAzure\Blob\Models\ListBlobsResult;
+use WindowsAzure\Common\ServiceException;
 
 class AzureAdapter extends AbstractAdapter
 {
@@ -30,22 +29,10 @@ class AzureAdapter extends AbstractAdapter
     protected $client;
 
     /**
-     * @var string[]
-     */
-    protected static $metaOptions = [
-        'CacheControl',
-        'ContentType',
-        'Metadata',
-        'ContentLanguage',
-        'ContentEncoding',
-    ];
-
-    /**
      * Constructor.
      *
      * @param IBlob  $azureClient
      * @param string $container
-     * @param string $prefix
      */
     public function __construct(IBlob $azureClient, $container, $prefix = null)
     {
@@ -55,7 +42,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function write($path, $contents, Config $config)
     {
@@ -63,7 +50,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function writeStream($path, $resource, Config $config)
     {
@@ -71,7 +58,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function update($path, $contents, Config $config)
     {
@@ -79,7 +66,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function updateStream($path, $resource, Config $config)
     {
@@ -87,7 +74,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function rename($path, $newpath)
     {
@@ -107,7 +94,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function delete($path)
     {
@@ -119,7 +106,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function deleteDir($dirname)
     {
@@ -132,7 +119,7 @@ class AzureAdapter extends AbstractAdapter
         $listResults = $this->client->listBlobs($this->container, $options);
 
         foreach ($listResults->getBlobs() as $blob) {
-            /** @var \MicrosoftAzure\Storage\Blob\Models\Blob $blob */
+            /** @var \WindowsAzure\Blob\Models\Blob $blob */
             $this->client->deleteBlob($this->container, $blob->getName());
         }
 
@@ -140,7 +127,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function createDir($dirname, Config $config)
     {
@@ -150,7 +137,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function has($path)
     {
@@ -170,13 +157,13 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function read($path)
     {
         $path = $this->applyPathPrefix($path);
 
-        /** @var \MicrosoftAzure\Storage\Blob\Models\GetBlobResult $blobResult */
+        /** @var \WindowsAzure\Blob\Models\GetBlobResult $blobResult */
         $blobResult = $this->client->getBlob($this->container, $path);
         $properties = $blobResult->getProperties();
         $content = $this->streamContentsToString($blobResult->getContentStream());
@@ -185,13 +172,13 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function readStream($path)
     {
         $path = $this->applyPathPrefix($path);
 
-        /** @var \MicrosoftAzure\Storage\Blob\Models\GetBlobResult $blobResult */
+        /** @var \WindowsAzure\Blob\Models\GetBlobResult $blobResult */
         $blobResult = $this->client->getBlob($this->container, $path);
         $properties = $blobResult->getProperties();
 
@@ -199,7 +186,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function listContents($directory = '', $recursive = false)
     {
@@ -214,7 +201,7 @@ class AzureAdapter extends AbstractAdapter
         $options = new ListBlobsOptions();
         $options->setPrefix($directory);
 
-        if ( ! $recursive) {
+        if (!$recursive) {
             $options->setDelimiter('/');
         }
 
@@ -227,31 +214,28 @@ class AzureAdapter extends AbstractAdapter
             $contents[] = $this->normalizeBlobProperties($blob->getName(), $blob->getProperties());
         }
 
-        if ( ! $recursive) {
-            $contents = array_merge(
-                $contents,
-                array_map([$this, 'normalizeBlobPrefix'], $listResults->getBlobPrefixes())
-            );
+        if (!$recursive) {
+            $contents = array_merge($contents, array_map([$this, 'normalizeBlobPrefix'], $listResults->getBlobPrefixes()));
         }
 
         return Util::emulateDirectories($contents);
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getMetadata($path)
     {
         $path = $this->applyPathPrefix($path);
 
-        /** @var \MicrosoftAzure\Storage\Blob\Models\GetBlobPropertiesResult $result */
+        /** @var \WindowsAzure\Blob\Models\GetBlobPropertiesResult $result */
         $result = $this->client->getBlobProperties($this->container, $path);
 
         return $this->normalizeBlobProperties($path, $result->getProperties());
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getSize($path)
     {
@@ -259,7 +243,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getMimetype($path)
     {
@@ -267,7 +251,7 @@ class AzureAdapter extends AbstractAdapter
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function getTimestamp($path)
     {
@@ -352,9 +336,9 @@ class AzureAdapter extends AbstractAdapter
     /**
      * Upload a file.
      *
-     * @param string          $path     Path
-     * @param string|resource $contents Either a string or a stream.
-     * @param Config          $config   Config
+     * @param string $path     Path
+     * @param mixed  $contents Either a string or a stream.
+     * @param Config $config   Config
      *
      * @return array
      */
@@ -362,40 +346,15 @@ class AzureAdapter extends AbstractAdapter
     {
         $path = $this->applyPathPrefix($path);
 
-        /** @var CopyBlobResult $result */
-        $result = $this->client->createBlockBlob(
-            $this->container,
-            $path,
-            $contents,
-            $this->getOptionsFromConfig($config)
-        );
-
-        return $this->normalize($path, $result->getLastModified()->format('U'), $contents);
-    }
-
-    /**
-     * Retrieve options from a Config instance.
-     *
-     * @param Config $config
-     *
-     * @return CreateBlobOptions
-     */
-    protected function getOptionsFromConfig(Config $config)
-    {
         $options = new CreateBlobOptions();
-
-        foreach (static::$metaOptions as $option) {
-            if ( ! $config->has($option)) {
-                continue;
-            }
-
-            call_user_func([$options, "set$option"], $config->get($option));
-        }
 
         if ($mimetype = $config->get('mimetype')) {
             $options->setContentType($mimetype);
         }
 
-        return $options;
+        /** @var \WindowsAzure\Blob\Models\CopyBlobResult $result */
+        $result = $this->client->createBlockBlob($this->container, $path, $contents, $options);
+
+        return $this->normalize($path, $result->getLastModified()->format('U'), $contents);
     }
 }
