@@ -50,7 +50,7 @@ if(isset($_GET['logout'])){
 <script language="JavaScript" type="text/javascript">
     
     function deleteConfirm(){
-    return confirm('Bạn có chắc muốn xóa !');
+        return confirm('Bạn có chắc muốn xóa !');
     }
 </script>
 

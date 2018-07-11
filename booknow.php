@@ -109,6 +109,7 @@
                       // document.getElementById("arrival_date").innerHTML = "dkjf";
                       $('#arrival_date')=today;
 
+                      
                       </script>
 
                   </div>
