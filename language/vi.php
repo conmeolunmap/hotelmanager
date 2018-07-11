@@ -112,6 +112,10 @@ $tvan['notification_failed'] = "Xin lỗi, vào thời gian mà quý khách ch�
 
 
 
-
+<style>
+*{
+	font-family:  Helvetica,Arial, sans-serif;
+}
+	</style>
 
 
