@@ -109,7 +109,14 @@ $tvan['book_address'] = "Address";
 $tvan['book_note'] = "Description";
 
 $tvan['reservenow'] = "Reserve Now";
+
+$tvan['notification_success'] = "Booking Success";
+$tvan['notification_failed'] = "Booking Failed";
 //END OF RESERVATION PAGE
+
+
+
+
 ?>
 
 

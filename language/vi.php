@@ -101,6 +101,9 @@ $tvan['book_address'] ="Địa chỉ";
 $tvan['book_note'] = "Ghi chú";
 
 $tvan['reservenow'] = "Gửi thông tin đặt phòng";
+
+$tvan['notification_success'] = "Đặt phòng thành công !";
+$tvan['notification_failed'] = "Xin lỗi, vào thời gian mà quý khách chọn, chúng tôi hiện đã hết loại phòng quý khách yêu cầu, phiền quý khách vui lòng lựa chọn loại phòng khác hoặc thời gian khác, xin cám ơn !";
 //END OF RESERVATION PAGE
 ?>
 

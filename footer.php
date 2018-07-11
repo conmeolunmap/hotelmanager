@@ -24,37 +24,6 @@
             </p>
           </div>
 
-          <div class="col-md-4">
-
-            <script>
-              function initMap() {
-                // The location of Uluru
-                var uluru = {lat: -25.344, lng: 131.036};
-                // The map, centered at Uluru
-                var map = new google.maps.Map(
-                    document.getElementById('map'), {zoom: 4, center: uluru});
-                // The marker, positioned at Uluru
-                var marker = new google.maps.Marker({position: uluru, map: map});
-              }
-            </script>
-
-            <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-            </script>
-            
-            <div id="map"></div>
-
-          </div>
-          <!-- <div class="col-md-4">
-            <h3><?=$tvan['connectwithus']?></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, odio.</p>
-            <form action="#" class="subscribe">
-              <div class="form-group">
-                <button type="submit"><span class="ion-ios-arrow-thin-right"></span></button>
-                <input type="email" class="form-control" placeholder="Enter email">
-              </div>
-              
-            </form>
           </div> -->
 
 

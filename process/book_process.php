@@ -60,7 +60,7 @@ if(isset($_POST['btn_book'])){
 
 				$do=mysqli_query($db,$sql);
 				if($do){
-					echo "<script>alert('Đặt phòng thành công, chúng tôi sẽ liên hệ để xác nhận thông tin của bạn!');window.location='../index.php';</script>";
+					echo "<script>alert('".$_POST['noti_ok']."');window.location='../index.php';</script>";
 				}else{
 					echo "error_888";
 				}
@@ -75,7 +75,7 @@ if(isset($_POST['btn_book'])){
 	
 
 	if($room_okay==0){
-		echo "<script>alert('Xin lỗi, vào thời gian mà quý khách chọn, chúng tôi hiện đã hết loại phòng quý khách yêu cầu, phiền quý khách vui lòng lựa chọn loại phòng khác hoặc thời gian khác, xin cám ơn ! ');window.location='../booknow.php';</script>";
+		echo "<script>alert('".$_POST['noti_failed']."');window.location='../booknow.php';</script>";
 	}
 	
 

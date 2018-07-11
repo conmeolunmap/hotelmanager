@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <title>T-VAN Booking</title>
-    <meta charset="utf-8">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
@@ -42,6 +44,7 @@
     }else{
       include "language/eng.php";
     }
+    
     include "header.php";
     ?>
     <!-- END header -->
@@ -189,6 +192,10 @@
                       <textarea name="book_note" id="message" class="form-control " cols="30" rows="7"></textarea>
                     </div>
                   </div>
+
+                  <input type="hidden" name="noti_ok" value="<?=$tvan['notification_success']?>">
+                  <input type="hidden" name="noti_failed" value="<?=$tvan['notification_failed']?>">
+
                   <div class="row">
                     <div class="col-md-6 form-group">
                       <input type="submit" value="<?=$tvan['reservenow']?>" name="btn_book" class="btn btn-primary">
