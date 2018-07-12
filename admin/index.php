@@ -21,7 +21,7 @@
   
 
 
-<script src="ckeditor/ckeditor.js"/>
+    <script language="javascript" src="ckeditor/ckeditor.js" type="text/javascript"/></script>
 
 <?php 
 // date_default_timezone_set('Asia/Ho_Chi_Minh');
