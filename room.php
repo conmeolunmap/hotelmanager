@@ -2,7 +2,7 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-12 heading-wrap text-center">
-            <h4 class="sub-heading"><?=$tvan['ourluxuryrooms']?></h4>
+            <!-- <h4 class="sub-heading"><?=$tvan['ourluxuryrooms']?></h4> -->
               <h2 class="heading"><?=$tvan['featuredrooms']?></h2>
           </div>
         </div>

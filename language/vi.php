@@ -37,8 +37,7 @@ $tvan['introduce_content'] = $intro['content'];
 
 
 //ABOUT ROOM
-$tvan['ourluxuryrooms'] = "Các loại phòng mà chúng tôi có";
-$tvan['featuredrooms'] = "Loại phòng";
+$tvan['featuredrooms'] = "Các loại căn hộ mà chúng tôi có";
 	//name
 	$tvan['room1'] = "Phòng một giường";
 	$tvan['room2'] = "Phòng hai giường";
@@ -87,6 +86,8 @@ $tvan['connectwithus'] = "Liên hệ với chúng tôi ";
 
 
 //FROM RESERVATION PAGE
+$tvan['slogan']="Chu Đáo - Thân Thiện - Tận Tâm - Phát Triển";
+
 $tvan['reservationform']= "Thông tin đặt phòng";
 $tvan['arrivaldate'] = "Ngày đến";
 $tvan['departuredate'] = "Ngày đi";

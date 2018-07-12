@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
     <!--favicon-->
-    <link rel="shortcut icon" type="image/png" href="images/logo.jpg"/>
+    <!-- <link rel="shortcut icon" type="image/png" href="images/logo.jpg"/> -->
 
 
 
@@ -82,15 +82,15 @@
         <div class="row align-items-center">
           <div class="col-md-4">
             <div class="heading-wrap text-center element-animate">
-              <h4 class="sub-heading">Stay with our luxury rooms</h4>
+              <!-- <h4 class="sub-heading">Stay with our luxury rooms</h4> -->
               <h2 class="heading"><?=$tvan['introduce_header']?></h2>
               <p class="mb-5"><?=$tvan['introduce_content']?></p>
-              <p><a href="#" class="btn btn-primary btn-sm">More About Us</a></p>
+              <!-- <p><a href="#" class="btn btn-primary btn-sm">More About Us</a></p> -->
             </div>
           </div>
           <div class="col-md-1"></div>
           <div class="col-md-7">
-            <img src="images/logo.jpg" style="width:90%; border-radius: 20px;" alt="Image placeholder" class="img-md-fluid img-responsive img-rounded">
+            <img src="images/hotel/3.jpg" style="width:90%; border-radius: 20px;" alt="Image placeholder" class="img-md-fluid img-responsive img-rounded">
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
 
 
     
-    <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
+    <!-- <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
       <div class="container">
         <div class="row justify-content-center align-items-center intro">
           <div class="col-md-9 text-center element-animate">
@@ -118,7 +118,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- END section -->
     
 

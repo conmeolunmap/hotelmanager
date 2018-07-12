@@ -42,8 +42,7 @@ $tvan['introduce_content'] = $intro['content'];
 
 
 //ABOUT ROOM
-$tvan['ourluxuryrooms'] = "Our luxury rooms";
-$tvan['featuredrooms'] = "Featured Rooms";
+$tvan['featuredrooms'] = "Our Luxury Studios";
 	//name
 	$tvan['room1'] = "Studio 1";
 	$tvan['room2'] = "Studio 2";
@@ -94,6 +93,8 @@ $tvan['connectwithus'] = "Connect with us";
 
 
 //FROM RESERVATION PAGE
+$tvan['slogan']="Caring - Warming - Committing - Developing";
+
 $tvan['reservationform']= "Reservation Form";
 $tvan['arrivaldate'] = "Arrival Date";
 $tvan['departuredate'] = "Departure Date";

@@ -6,25 +6,28 @@
 
           <div class="col-md-4">
             <h3><?=$tvan['phonesupport']?></h3>
-            <p>24/7 Call us now.</p>
+            
             <p class="lead"><a href="tel://"><?=$tvan['phone']?></a></p>
           </div>
 
 
           <div class="col-md-4">
             <h3><?=$tvan['connectwithus']?></h3>
-            <p>We are socialized. Follow us</p>
+            
             <p>
               <a href="https://www.facebook.com/pg/T-VAN-Serviced-Apartment-Hotel-C%E1%BA%A7n-Th%C6%A1-1779119602144915/posts/?ref=page_internal" class="pl-0 p-3"><span class="fa fa-facebook"></span></a>
-              
-              <a href="#" class="p-3"><span class="fa fa-twitter"></span></a>
-              <a href="#" class="p-3"><span class="fa fa-instagram"></span></a>
-              <a href="#" class="p-3"><span class="fa fa-vimeo"></span></a>
-              <a href="#" class="p-3"><span class="fa fa-youtube-play"></span></a>
+
+              <a href="#" class="p-3"><span class="fa fa-google"></span></a>
+
             </p>
           </div>
 
-          </div> -->
+
+          <div class="col-md-4">
+            <p><?=$tvan['address']?></p>
+          </div>
+
+          </div> 
 
 
 

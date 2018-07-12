@@ -61,7 +61,7 @@
 
             <div class="mb-5 element-animate">
               <h1><?=$tvan['reservation']?></h1>
-              <p>Discover our world's #1 Luxury Room For VIP.</p>
+              <p><?=$tvan['slogan']?></p>
             </div>
 
           </div>
@@ -132,7 +132,7 @@
 
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <label for="room">Room <span class="star"> *</span></label><br>
+                      <label for="room">Studio <span class="star"> *</span></label><br>
                       
                       <div class="radio">
                         <label><input checked type="radio" value="R1" name="book_room" <?=$room1?>> <?=$tvan['room1']?></label>
@@ -148,10 +148,10 @@
 
                     <div class="col-md-6 form-group">
                       <label for="room"><?=$tvan['book_adults']?></label>
-                      <input type="number" value="1" name="book_adults" class="form-control" required>
+                      <input min="1" type="number" value="1" name="book_adults" class="form-control" required>
 
                       <label for="room"><?=$tvan['book_children']?></label>
-                      <input type="number" value="0" name="book_children"  class="form-control" required>
+                      <input min="0" type="number" value="0" name="book_children"  class="form-control" required>
                     </div>
 
                   </div>
@@ -161,14 +161,14 @@
 
                   <div class="row">
                     <div class="col-md-12 form-group">
-                      <label for="name">Name <span class="star"> *</span></label>
+                      <label for="name"><?=$tvan['customer_name']?> <span class="star"> *</span></label>
                       <input type="text" name="book_name" class="form-control " required>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="col-md-12 form-group">
-                      <label for="phone">Phone <span class="star"> *</span></label>
+                      <label for="phone"><?=$tvan['customer_phone']?> <span class="star"> *</span></label>
                       <input type="phone" name="book_phone" class="form-control " required>
                     </div>
                   </div>
@@ -190,7 +190,7 @@
                   <div class="row">
                     <div class="col-md-12 form-group">
                       <label for="message"><?=$tvan['book_note']?></label>
-                      <textarea name="book_note" id="message" class="form-control " cols="30" rows="7"></textarea>
+                      <textarea name="book_note" id="message" class="form-control " cols="30" rows="4"></textarea>
                     </div>
                   </div>
 
@@ -217,7 +217,7 @@
 
           </div>
           <div class="col-md-6" >
-          <img style="width:100%;" src="images/logo.jpg"/>
+          <img style="width:100%; border-radius:20px;" src="images/hotel/8.jpg" />
           </div>
               
         </div>
@@ -229,17 +229,17 @@
 
 
 
-    <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
+   <!--  <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/img_5.jpg);">
       <div class="container">
         <div class="row justify-content-center align-items-center intro">
           <div class="col-md-9 text-center element-animate">
             <h2>Relax and Enjoy your Holiday</h2>
             
-            <!-- <div class="btn-play-wrap"><a href="https://www.youtube.com/watch?v=8BAdhoeabUM" class="btn-play popup-youtube "><span class="ion-ios-play"></span></a></div> -->
+            <div class="btn-play-wrap"><a href="https://www.youtube.com/watch?v=8BAdhoeabUM" class="btn-play popup-youtube "><span class="ion-ios-play"></span></a></div>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- END section -->
 
     <?php include "footer.php"; ?>

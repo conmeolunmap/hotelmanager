@@ -12,7 +12,7 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
           <a class="navbar-brand" href="index.php">
-            <img class="img-rounded" style="width:50px;" src="images/logo.jpg"/>
+            <!-- <img class="img-rounded" style="width:50px;" src="images/logo.jpg"/> -->
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

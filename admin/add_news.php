@@ -16,7 +16,7 @@
         </div>
 
 
-        <label>Hình đại diện</label>
+        <label>Hình đại diện tin tức</label>
         <div style="position:relative;">
             <!--<a class='btn btn-primary' href='javascript:;'></a>-->
                 <input type="file" name="photo"/>
@@ -30,20 +30,10 @@
 
 
         <div class="form-group">
-            <label>Noi dung tin tuc</label>
+            <label>Nội dung tin tức</label>
             <textarea class="ckeditor form-control" name="fm_content" id='fm_content' ></textarea></br>
-            <script>
-              CKEDITOR.replace( 'fm_content',
-                    {
-                        filebrowserBrowseUrl : 'ckfinder/ckfinder.html',
-                        filebrowserImageBrowseUrl : 'ckfinder/ckfinder.html?type=Images',
-                        filebrowserFlashBrowseUrl : 'ckfinder/ckfinder.html?type=Flash',
-                        filebrowserUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-                        filebrowserImageUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-                        filebrowserFlashUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
-                    });
-
-            </script>
+            
+            <script>CKEDITOR.replace( 'fm_content');</script>
             
         </div>
         
