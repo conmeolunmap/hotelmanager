@@ -1,4 +1,4 @@
-d<!doctype html>
+
 <html lang="en">
   <head>
     <title>T-VAN</title>

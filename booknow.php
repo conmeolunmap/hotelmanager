@@ -1,11 +1,10 @@
-<!doctype html>
+
 <html lang="en">
   <head>
     <title>T-VAN Booking</title>
 
-    <meta http-equiv="Content-Type" content="text/html;" />
-    <meta charset='utf-8'>
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Rubik:300,400,700" rel="stylesheet">
@@ -199,9 +198,10 @@
                   <input type="hidden" name="noti_failed" value="<?=$tvan['notification_failed']?>">
 
                   <div class="row">
-                    <div class="col-md-6 form-group">
+                    <div class="col-md-6 form-group"> 
                       <input type="submit" value="<?=$tvan['reservenow']?>" name="btn_book" class="btn btn-primary">
                     </div>
+                
                   </div>
 
 

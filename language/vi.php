@@ -113,9 +113,15 @@ $tvan['notification_failed'] = "Xin lỗi, vào thời gian mà quý khách ch�
 
 
 <style>
-*{
-	font-family:  Helvetica,Arial, sans-serif;
-}
+
+	*{
+		font-family: 'Playfair Display';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'), url(https://fonts.gstatic.com/s/playfairdisplay/v13/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2) format('woff2');
+		unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+	}
+
 	</style>
 
 
