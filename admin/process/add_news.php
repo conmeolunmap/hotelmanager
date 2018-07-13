@@ -49,7 +49,7 @@ if(isset($_POST['btn_addnews'])){
 
     }
 
-    $sql="insert into news values('','$title','$img','$content','$admin')";
+    $sql="insert into news values('','$title','$img','$content','$admin','$date')";
 
     $qr=mysqli_query($db,$sql);
     if($qr){
