@@ -36,7 +36,7 @@
             <script>
            CKEDITOR.replace( 'fm_content',
                    {
-                       filebrowserBrowseUrl : 'ckfinder/ckfinder.html',
+                        filebrowserBrowseUrl : 'ckfinder/ckfinder.html',
                         filebrowserImageBrowseUrl : 'ckfinder/ckfinder.html?type=Images',
                         filebrowserFlashBrowseUrl : 'ckfinder/ckfinder.html?type=Flash',
                         filebrowserUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
