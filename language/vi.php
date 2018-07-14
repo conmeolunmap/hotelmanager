@@ -11,8 +11,9 @@ $tvan['contact'] = "Liên hệ";
 
 
 
-
-$tvan['address'] = "Địa chỉ: 72 Lương Định Của, p Cái Khế, TP. Cần Thơ";
+$ar=mysqli_fetch_array(mysqli_query($db,"select * from content where content_id=6"));
+$tvan['address'] = $ar['content'];
+$tvan['address_title'] = "Địa chỉ";
 $tvan['reservation'] = "Đặt phòng";
 $tvan['booknow'] = "Đặt phòng ngay";
 

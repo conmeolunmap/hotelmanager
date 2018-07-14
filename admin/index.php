@@ -18,16 +18,18 @@
   <script src='fullcalendar/lib/moment.min.js'></script>
   <script src='fullcalendar/lib/jquery.min.js'></script>
   <script src='fullcalendar/fullcalendar.min.js'></script>
-  
 
 
-    <script language="javascript" src="ckeditor/ckeditor.js" type="text/javascript"/></script>
+  <script language="javascript" src="ckeditor/ckeditor.js" type="text/javascript"/></script>
 
-<?php 
-// date_default_timezone_set('Asia/Ho_Chi_Minh');
-?>
+  <?php 
+  // date_default_timezone_set('Asia/Ho_Chi_Minh');
+  ?>
 
 </head>
+
+
+
 <body id="main">
 
 

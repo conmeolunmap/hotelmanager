@@ -12,8 +12,9 @@ $tvan['contact'] = "Contact";
 //END MENU
 
 
-
-$tvan['address'] = "Address: 72 Luong Dinh Cua, Can Tho city";
+$ar=mysqli_fetch_array(mysqli_query($db,"select * from content where content_id=7"));
+$tvan['address'] = $ar['content'];
+$tvan['address_title'] = "Address";
 $tvan['reservation'] = "Reservation";
 $tvan['booknow'] = "Book Now";
 

@@ -24,6 +24,7 @@
 
 
           <div class="col-md-4">
+            <h3><?=$tvan['address_title']?></h3>
             <p><?=$tvan['address']?></p>
           </div>
 

@@ -44,8 +44,8 @@
     <tr>
 	      <td><?=$order['name']?></td>
 	      <td><?=$order['phone']?></td>
-        <td><?=$order['address']?></td>
-        <td><?=$order['email']?></td>
+            <td><?=$order['address']?></td>
+            <td><?=$order['email']?></td>
 	      <td><?=$order['type_name']?></td>
 	      <td><?=$order['adults']?></td>	
         <td><?=$order['children']?></td>  
