@@ -4,11 +4,12 @@
 include "../../database.php";
 if(isset($_POST['btn_addnews'])){
     
-    $img="no_image.jpg";
+    $img="no_image.png";
     $date=date("Y/m/d");
     $admin='';
     $title='';
     $content='';
+    $language = $_POST['fm_language'];
 
     if(isset($_POST['fm_title'])){
     	$title=$_POST['fm_title'];
@@ -49,12 +50,12 @@ if(isset($_POST['btn_addnews'])){
 
     }
 
-    $sql="insert into news values('','$title','$img','$content','$admin','$date')";
+    $sql="insert into news values('','$title','$img','$content','$admin','$date','$language')";
 
     $qr=mysqli_query($db,$sql);
     if($qr){
-        echo "Thêm thành công";
-        // echo "<script>window.location='../index.php';</script>";
+        // echo "Thêm thành công";
+        echo "<script>alert('Thêm thành công');window.location='../index.php';</script>";
     }else{
         echo "Thất bại</br>".$loihinhanh;
 

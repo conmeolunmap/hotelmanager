@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Tvan Condotel</title>
+	<title>Admin Tvan</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
   
@@ -21,6 +21,7 @@
 
 
   <script language="javascript" src="ckeditor/ckeditor.js" type="text/javascript"/></script>
+
 
   <?php 
   // date_default_timezone_set('Asia/Ho_Chi_Minh');

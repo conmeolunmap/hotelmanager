@@ -16,6 +16,15 @@
         </div>
 
 
+        <div class="radio">
+          <label><input type="radio" value="eng" name="fm_language">tiếng Anh</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" value="vie" checked name="fm_language">tiếng Việt</label>
+        </div>
+
+
+
         <label>Hình đại diện tin tức</label>
         <div style="position:relative;">
             <!--<a class='btn btn-primary' href='javascript:;'></a>-->
@@ -42,7 +51,7 @@
                         filebrowserUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
                         filebrowserImageUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
                         filebrowserFlashUploadUrl : 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
-                    });
+                });
             </script>
             
         </div>

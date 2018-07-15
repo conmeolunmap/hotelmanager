@@ -46,7 +46,7 @@
                 <div class="category">NEWS</div>
                 <h3 class="mb-3"><a href="#"><?=$row['news_title']?></a></h3>
                 <p class="mb-4">
-                  <?=substr($row['news_content'], 0,300)." . . ."?>
+                  <?=strip_tags(substr($row['news_content'], 0,300)." . . .")?>
                 </p>
                 <p><a href="news.php?newsid=<?=$id?>" class="btn btn-primary btn-outline-primary btn-sm"><?=$tvan['readmore']?></a></p>
               </div>
